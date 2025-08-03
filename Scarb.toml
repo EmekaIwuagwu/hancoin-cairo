@@ -4,44 +4,18 @@ version = "0.1.0"
 edition = "2023_11"
 
 [dependencies]
-starknet = "2.8.2"
+starknet = "2.8.0"
 
 [dependencies.openzeppelin]
 git = "https://github.com/OpenZeppelin/cairo-contracts.git"
-rev = "d916297c00f9c901d4e4c248c55e6b9ae3aaec37"
+tag = "v0.14.0"
 
 [[target.starknet-contract]]
-name = "token"
-path = "contracts/token.cairo"
 sierra = true
 casm = true
 
-[[target.starknet-contract]]
-name = "escrow"
-path = "contracts/escrow.cairo"
-sierra = true
-casm = true
+[tool.snforge]
+# See more keys and their definitions at https://docs.swmansion.com/snforge/forge-config/global.html
 
-[[target.starknet-contract]]
-name = "loan"
-path = "contracts/loan.cairo"
-sierra = true
-casm = true
-
-[[target.starknet-contract]]
-name = "paymaster"
-path = "contracts/paymaster.cairo"
-sierra = true
-casm = true
-
-[[target.starknet-contract]]
-name = "swap"
-path = "contracts/swap.cairo"
-sierra = true
-casm = true
-
-[[target.starknet-contract]]
-name = "credit_card_sim"
-path = "contracts/credit_card_sim.cairo"
-sierra = true
-casm = true
+[profile.dev.package.homebase_starknet]
+# See more keys and their definitions at https://docs.swmansion.com/snforge/forge-config/package-config.html
